@@ -1,0 +1,87 @@
+
+HTML{		/*background for whole page*/
+	background:url('images/balloons5.jpg')no-repeat;
+	background-size: 100%;
+	
+	
+}
+
+H1{			/*heading */
+	font-family:impact;
+	color:red;
+	text-shadow:5px 5px black;
+	font-style:italic;
+	font-size:100px;
+	text-align:center;
+	margin:0px;
+	padding:0px;
+	text-decoration:underline;
+}
+
+H2{		/*h2 heading  */
+	
+	font-family:impact;
+	color:yellow;
+	text-shadow:5px 5px black;
+	font-style:italic;
+	font-size:40px;
+	text-align:center;
+	margin:0px;
+}
+H3{		/* users score*/
+	font-family:impact;
+	color:white;
+	text-shadow:5px 5px black;
+	text-decoration:underline;
+	font-style:italic;
+	font-size:50px;
+	text-align:center;
+	margin:0px;
+	padding:0px;
+	
+	
+}
+
+#buttonsAlign{	/* align the buttons to center of the page */
+	text-align:center;
+	
+}
+#startButton,#shuffle{	/*start buttons and shuffle buttons */
+	color:red;
+	background-color:white;
+	font-size:23px;
+	border-radius:10%;
+	box-shadow:4px 4px black;
+	
+	
+}	
+
+#sectionAlign{	/*to align sections*/
+	text-align:center;
+}
+	
+SECTION{		/* for display of inline-block*/
+		display:inline-block;
+}
+	
+	
+	
+#clickSection1,#clickSection2,#clickSection3{	/*cup 1,2,3 */
+		
+		background-color:red;
+		border-style:solid;
+		border-color:grey;
+		border-width:10px;
+		padding:10px;
+}
+	
+#hiddenSection1,#hiddenSection2,#hiddenSection3{	/* hidden Sections*/
+		background-color:blue;
+		border-style:solid;
+		border-color:grey;
+		border-width:10px;
+		padding:10px;
+		display:none;
+}
+
+	

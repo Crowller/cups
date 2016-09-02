@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<HTML lang = "en-us">
+	
+	<HEAD>
+		<TITLE>MY CUP GAME</TITLE>
+	</HEAD>	
+	<HEADER>
+		<SCRIPT src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+		</SCRIPT>
+		<SCRIPT>
+			
+			$(document).ready(function(){
+				$("#shuffle").click(function(){//*shuffle button*/
+				
+					var element1 = document.getElementById('hidden1');/*make hidden sections cups 1-3*/
+				element1.src = "images/cup2.jpg";
+				
+				var element2 = document.getElementById('hidden2');
+				element2.src = "images/cup1.jpg";
+				
+				var element3 = document.getElementById('hidden3');
+				element3.src = "images/cup3.jpg";
+				
+				var element4 = document.getElementById('click1');/*make hidden sections cups 1-3*/
+				element4.src = "images/cup1.jpg";
+				
+				var element5 = document.getElementById('click2');
+				element5.src = "images/cup3.jpg";
+				
+				var element6 = document.getElementById('click3');
+				element6.src = "images/cup2.jpg";
+				
+					
+					$("#clickSection2").fadeOut(),/*shuffle cups by hiding and showing sectioms*/
+					
+					$("#clickSection3").fadeOut(),
+					$("#hiddenSection1").show(1000),
+					$("#clickSection2").show(1000),				
+					$("#clickSection1").hide(500),
+					$("#hiddenSection1").show(1000),
+					$("#hiddenSection2").show(1000),
+					$("#hiddenSection1").hide(500),
+					$("#clickSection3").show(1000),
+					$("#clickSection2").hide(500),
+					$("#hiddenSection3").show(1000),
+					
+					
+					$("#hiddenSection3").hide(1000),
+					$("#clickSection2").show(1000),
+					$("#clickSection3").hide(500),
+					$("#hiddenSection1").show(1000),
+					$("#hiddenSection2").hide(500),
+					$("#hiddenSection1").hide(500),
+					$("#clickSection1").show(1000),
+					$("#clickSection2").show(1000),
+					$("#hiddenSection1").hide(500),
+					$("#clickSection3").fadeIn(),
+					
+					
+					
+					
+					
+					
+							
+					
+								
+					$("#clickSection1").hide(100),
+					$("#hiddenSection1").show(1000),
+					$("#clickSection2").hide(100),
+					$("#hiddenSection2").show(1000),
+					$("#clickSection3").hide(100),
+					$("#hiddenSection3").show(1000),
+					
+					
+					$("#hiddenSection1").hide(1000),
+					$("#clickSection1").show(100),
+					$("#hiddenSection2").hide(1000),
+					$("#clickSection2").show(100),
+					$("#hiddenSection3").hide(1000),
+					$("#clickSection3").show(100),
+					
+					$("#clickSection1").hide(1000),
+					$("#hiddenSection1").show(1000),
+					$("#clickSection2").hide(1000),
+					$("#hiddenSection2").show(1000),
+					$("#clickSection3").hide(1000),
+					$("#hiddenSection3").show(1000),
+					
+					
+					$("#hiddenSection1").hide(1000),
+					$("#clickSection1").show(2000),
+					$("#hiddenSection2").hide(1000),
+					$("#clickSection2").show(2000),
+					$("#hiddenSection3").hide(1000),
+					$("#clickSection3").show(2000);
+					
+					
+					
+					
+				gameStart();/*After shuffle go to function gamestart() and  continue again*/
+			});
+			
+			});
+		
+		</SCRIPT>
+		
+		<SCRIPT>
+			function gameOverX(){	/*after score = 0 */
+							var element1 = document.getElementById('hidden1');
+					var element2 = document.getElementById('hidden2');
+					var element3 = document.getElementById('hidden3');
+							element1.src = "images/x.jpg";
+							element2.src = "images/x.jpg";
+							element3.src = "images/x.jpg";
+							
+							$("#clickSection1").fadeOut(),$("#hiddenSection1").fadeIn(2000);/*make all the cups or  x turn into x*/
+							$("#clickSection2").fadeOut(),$("#hiddenSection2").fadeIn(2000);
+							$("#clickSection3").fadeOut(),$("#hiddenSection3").fadeIn(2000);
+						
+							alert("YOUR SCORE IS 0!!!!!!!!!GAME OVER!!!!!!!Please Press [Start Game] to Continue");
+							userScore = 3;
+					  document.getElementById("user").innerHTML = "SCORE : " + userScore;/*make score 3 to start again*/
+							gameStart();
+							
+			}
+		</SCRIPT>
+			
+		<SCRIPT>
+				var userScore = 3;
+					  var randomNumber = 0;
+		
+			function gameStart(){ 
+			
+				randomNumber = Math.floor(Math.random()*3)+1;/*random number not 0*/
+			/*when you click 1st,2nd or 3rd cup they will fade out and the hidden section will fade in with x or ball*/
+				$(document).ready(function(){
+				$("#clickSection1").click(function(){
+					$(this).fadeOut(50),$(this).next().fadeIn(2000);
+			});
+				$("#clickSection2").click(function(){
+					$(this).fadeOut(50),$(this).next().fadeIn(2000);
+			});
+				$("#clickSection3").click(function(){
+					$(this).fadeOut(50),$(this).next().fadeIn(2000);
+			});
+				$("#startButton").click(function(){/*when start button is pressed remove hidden sections and show cups*/
+														
+					$("#hiddenSection1").fadeOut(),$("#clickSection1").fadeIn(1000);
+					$("#hiddenSection2").fadeOut(),$("#clickSection2").fadeIn(1000);
+					$("#hiddenSection3").fadeOut(),$("#clickSection3").fadeIn(1000);
+			});
+			});
+				
+				
+								/*make the three sections images of a cup*/
+				var element1 = document.getElementById('click1');
+				element1.src = "images/cup1.jpg";
+				
+				var element2 = document.getElementById('click2');
+				element2.src = "images/cup2.jpg";
+				
+				var element3 = document.getElementById('click3');
+				element3.src = "images/cup3.jpg";
+				
+				}
+				
+				function first(){	/*if 1st cup is pressed*/
+										
+					var element1 = document.getElementById('hidden1');	/* hidden sections changed below*/
+					var element2 = document.getElementById('hidden2');
+					var element3 = document.getElementById('hidden3');
+					
+					var guess1 = 1;	
+				if( randomNumber == guess1){
+							element1.src = "images/ball.jpg";/*if random number is 1 then that cup becomes a ball*/
+							element2.src = "images/x.jpg";		/*the other cups become an x*/
+							element3.src = "images/x.jpg";
+						
+						
+					$("#clickSection2").fadeOut(),$("#hiddenSection2").fadeIn(2000);/*fade out the cups,fade in the hidden sections*/
+					$("#clickSection3").fadeOut(),$("#hiddenSection3").fadeIn(2000);
+					
+			
+							
+						
+							userScore = userScore + 1;	/*one added to userscore*/
+							document.getElementById("user").innerHTML = "SCORE : " + userScore;/*change users score*/
+							guessCorrect();
+						}else if(randomNumber !=0){	/*RANDOM NUMBER = 0 at start until start button is pressed
+													to stop user clicking cups until they press start game*/
+							 element1.src = "images/x.jpg";/*make cup an x*/
+							userScore--;
+							if(userScore <= 0){
+							gameOverX();/*go to function gameOverX()*/
+							}else{
+							document.getElementById("user").innerHTML = "SCORE : " + userScore;	/*change users score*/
+							}
+						}
+					}		
+							
+				
+				
+					function second(){	/*if 2nd cup is pressed*/
+					
+					var element1 = document.getElementById('hidden1');/* hidden sections changed below*/
+					var element2 = document.getElementById('hidden2');
+					var element3 = document.getElementById('hidden3');
+					
+						var guess2 = 2;
+				if( randomNumber == guess2){		
+									/*if random number is 2 then that cup becomes a ball,all other cups are x*/
+							element1.src = "images/x.jpg";	
+							element2.src = "images/ball.jpg";
+							element3.src = "images/x.jpg";
+						
+						
+					$("#clickSection1").fadeOut(),$("#hiddenSection1").fadeIn(2000);/*fade out the cups,fade in the hidden sections*/
+					$("#clickSection3").fadeOut(),$("#hiddenSection3").fadeIn(2000);
+							
+							userScore = userScore + 1;
+							document.getElementById("user").innerHTML = "SCORE : " + userScore;/*change users score*/
+							
+						
+						}else if(randomNumber !=0){	/*RANDOM NUMBER = 0 at start until start button is pressed
+													to stop user clicking cups until they press start game*/
+							 element2.src = "images/x.jpg";/*make cup an x*/
+							userScore--;
+							if(userScore <= 0){
+								gameOverX();/*go to function gameOverX()*/
+							}else{
+							document.getElementById("user").innerHTML = "SCORE : " + userScore;/*change users score*/
+							}
+						}
+					}
+					
+					function third(){/*if 3rd cup is pressed*/
+					
+					var element1 = document.getElementById('hidden1');	/* hidden sections changed below*/
+					var element2 = document.getElementById('hidden2');
+					var element3 = document.getElementById('hidden3');
+						var guess3 = 3;
+				if( randomNumber == guess3){
+											/*if random number is 3 then that cup becomes a ball,all other cups are x*/
+							element1.src = "images/x.jpg";
+							element2.src = "images/x.jpg";
+							element3.src = "images/ball.jpg";
+						
+						
+					$("#clickSection1").fadeOut(),$("#hiddenSection1").fadeIn(2000);/*fade out the cups,fade in the hidden sections*/
+					$("#clickSection2").fadeOut(),$("#hiddenSection2").fadeIn(2000);
+							userScore = userScore + 1;
+							document.getElementById("user").innerHTML = "SCORE : " + userScore;	/*change users score*/
+						
+							
+						}else if(randomNumber !=0){	/*RANDOM NUMBER = 0 at start until start button is pressed
+													to stop user clicking cups until they press start game*/
+							element3.src = "images/x.jpg";/*make cup an x*/
+							userScore--;
+							if(userScore <= 0){
+								gameOverX();/*go to function gameOverX()*/
+							}else{
+							document.getElementById("user").innerHTML = "SCORE : " + userScore;	/*change users score*/
+							}
+						}
+					}
+					
+			 </SCRIPT>
+		
+		<H1> THE CUP GAME</H1>
+		<link rel = "stylesheet" type = "text/css" href = "mystyle.css"><!--CSS LINK-->
+	</HEADER>
+	<MAIN>
+		<H2>GUESS THE CORRECT CUP TO FIND THE BALL</H2>
+		
+		<DIV id = "buttonsAlign">
+		<button   onclick = "gameStart()" id = "startButton">START GAME</button>
+		
+		
+		<button id = "shuffle" onclick = "shuffleCups()">Shuffle the Cups</button>
+		</DIV>
+		<H3 id="user">SCORE :3</H3>
+		
+		<DIV id = "sectionAlign">
+		<SECTION id = "clickSection1" onclick = "first()"><!--1st cup-->
+		<img   id = "click1"    src = "images/cup1.jpg" width = "250" height = "200" alt ="cup1">
+		</SECTION>
+		
+		<SECTION id = "hiddenSection1"><!--1st hidden SECTION had to have an image for validator but is hidden-->
+			<img   id = "hidden1"    src = "images/cup1.jpg" width = "250" height = "200" alt = "hidden1">
+		</SECTION>
+		
+		<SECTION id = "clickSection2" onclick = "second()"><!--2nd cup-->
+		<img  id = "click2"   src = "images/cup2.jpg" width = "250" height = "200" alt ="cup2">
+		</SECTION>
+		
+		<SECTION id = "hiddenSection2"><!--2nd hidden SECTION had to have an image for validator but is hidden-->
+			<img   id = "hidden2"   src = "images/cup2.jpg" width = "250" height = "200" alt = "hidden2">
+		</SECTION>
+		
+		<SECTION id = "clickSection3" onclick = "third()"><!--3rd cup-->
+		<img  id = "click3"   src = "images/cup3.jpg" width = "250" height = "200" alt ="cup3">
+		</SECTION>
+			
+		<SECTION id = "hiddenSection3"><!--3rd hidden SECTION had to have an image for validator but is hidden-->
+			<img   id = "hidden3"  src = "images/cup3.jpg"  width = "250" height = "200" alt = "hidden3">
+		</SECTION>
+		
+		</DIV>
+	</MAIN>
+	
+</HTML>
+
+
